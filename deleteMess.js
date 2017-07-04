@@ -1,7 +1,6 @@
 {
 	let deleteMess = Object.create(null);
 	// let clear = document.getElementById("clear-btn");
-	let output = document.getElementById("msg-output");
 
 	// removes message from DOM based on id given
 	deleteMess.removeMessage = function(id) {
@@ -20,15 +19,15 @@
 
 	// clear button removes text from msg div
 	deleteMess.clearElement = function () {
-		output.innerHTML = "";
+		$output.html("");
 	}
 
 	// Checks to see if there are any messages, if not: disables clear button.
 	deleteMess.disableBtn = function () {
-		if  (output.innerHTML === "") {
-	    clear.disabled = true;
+		if  ($output.html === '') {
+	    $clear.disabled = true;
 		} else {
-	    clear.disabled = false;
+	    $clear.disabled = false;
 		}
 	};
 

@@ -1,25 +1,27 @@
 Chatty.LoadMessages.retrieveMessages(Chatty.DOMInteraction.assignIds, Chatty.DOMInteraction.pushJsonToCurrentArray);
 
-let inputBox = document.getElementById('msg-input');
-let clear = document.getElementById('clear-btn')
+let $inputBox = $('#msg-input');
+let $clear = $('#clear-btn');
+let $output = $("#msg-output");
 
-inputBox.addEventListener('keypress', function() {
-	if (inputBox.value !== '' && event.key === 'Enter') {
+
+$inputBox.keypress(function() {
+	if ($inputBox.val() !== '' && event.key === 'Enter') {
 		Chatty.DeleteMess.clearElement();
 		Chatty.DOMInteraction.addToArray();
 		Chatty.DOMInteraction.assignIds(Chatty.DOMInteraction.getUserMessages());
-		inputBox.value = '';
+		$inputBox.val('');
 		Chatty.DeleteMess.disableBtn();
 	}
 });
 
-clear.addEventListener("click", function() {
+$clear.click(function() {
 	Chatty.DeleteMess.clearArr(Chatty.DOMInteraction.getUserMessages())
 	Chatty.DeleteMess.clearElement();
 	Chatty.DeleteMess.disableBtn();
 });
 
-window.addEventListener("click", function() {
+$(document).on( "click", function() {
 	if (event.target.classList.contains("delete-btn")) {
 		let parentID = event.target.parentNode.getAttribute("id");
 		Chatty.DeleteMess.removeMessage(parentID);
