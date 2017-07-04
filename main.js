@@ -21,8 +21,7 @@ $clear.click(function() {
 	Chatty.DeleteMess.disableBtn();
 });
 
-///this neeeds WOOOOORK!
-document.on "click", function() {
+$(document).on( "click", function() {
 	if (event.target.classList.contains("delete-btn")) {
 		let parentID = event.target.parentNode.getAttribute("id");
 		Chatty.DeleteMess.removeMessage(parentID);

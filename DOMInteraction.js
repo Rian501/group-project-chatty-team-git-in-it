@@ -42,7 +42,7 @@
 
 	$("#dark-theme-box").click(function() {
 		$(".theme").toggleClass("dark");
-	})
+	});
 	// let addTheme = document.querySelector(".theme");
 
 	// document.getElementById("dark-theme-box").addEventListener("click", function() {
